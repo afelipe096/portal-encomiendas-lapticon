@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal de Encomiendas Lapticon" />
+  <title>Portal de Encomiendas | Lapticon</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <p class="eyebrow">LAPTICON</p>
+      <h1>Portal de Encomiendas</h1>
+      <p class="subtitle">Conecta ciudades. Envía con confianza.</p>
+    </header>
+
+    <section id="login-section" class="panel">
+      <h2>Iniciar sesión</h2>
+      <p class="muted">Ingresa con tu cuenta de Lapticon para administrar tus encomiendas.</p>
+      <form id="login-form" class="form-grid">
+        <label for="login-email">Correo electrónico</label>
+        <input type="email" id="login-email" placeholder="Correo" autocomplete="username" required />
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" placeholder="Contraseña" autocomplete="current-password" required />
+        <button type="submit" id="login-button">Ingresar</button>
+      </form>
+      <p id="login-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="app-section" hidden>
+      <div class="welcome panel">
+        <div>
+          <p class="eyebrow">CUENTA ACTIVA</p>
+          <p id="welcome-message"></p>
+        </div>
+        <button type="button" id="logout-button" class="button-secondary">Cerrar sesión</button>
+      </div>
+
+      <section class="panel">
+        <h2>Registrar encomienda</h2>
+        <p class="muted">Selecciona las ciudades de origen y destino y completa los datos del envío.</p>
+        <form id="encomienda-form" class="form-grid">
+          <label for="origen-select">Ciudad de origen</label>
+          <select id="origen-select" required>
+            <option value="">Cargando ciudades...</option>
+          </select>
+          <label for="destino-select">Ciudad de destino</label>
+          <select id="destino-select" required>
+            <option value="">Cargando ciudades...</option>
+          </select>
+          <label for="valor-input">Valor de la encomienda</label>
+          <input type="number" id="valor-input" placeholder="Ej. 150000" min="1" step="any" required />
+          <label for="moneda-select">Moneda</label>
+          <select id="moneda-select" required>
+            <option value="COP">COP</option>
+            <option value="USD">USD</option>
+          </select>
+          <label for="observaciones-input">Observaciones</label>
+          <textarea id="observaciones-input" placeholder="Detalles adicionales (opcional)" rows="3"></textarea>
+          <button type="submit" id="create-button">Crear encomienda</button>
+        </form>
+        <p id="encomienda-status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <h2>Mis encomiendas</h2>
+            <p class="muted">Consulta el estado de tus envíos registrados.</p>
+          </div>
+          <button type="button" id="refresh-button" class="button-secondary">Actualizar</button>
+        </div>
+        <div class="table-wrapper">
+          <table id="encomiendas-table">
+            <thead>
+              <tr><th>Origen</th><th>Destino</th><th>Estado</th><th>Valor</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="encomiendas-body">
+              <tr><td colspan="5" class="empty-cell">Inicia sesión para consultar tus encomiendas.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="list-status" class="status" role="status" aria-live="polite"></p>
+      </section>
+    </section>
+
+    <footer>© Lapticon · Portal de Encomiendas</footer>
+  </main>
+</body>
+</html>
