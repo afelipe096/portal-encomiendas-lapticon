@@ -178,7 +178,7 @@ $("encomienda-form").addEventListener("submit", async (e) => {
     observaciones: $("observaciones-input").value.trim(),
   };
 
-  if (!body.ciudadOrigen || !body.ciudadDestino || !body.valor || body.valor <= 0 || !body.moneda) {
+  if (!body.ciudadOrigen || !body.ciudadDestino || !body.valor || body.valor <= 0 || !body.moneda || !body.observaciones) {
     mostrarEstado($("encomienda-status"), "Completa origen, destino, valor y moneda. El valor debe ser mayor que cero.", "error");
     return;
   }
