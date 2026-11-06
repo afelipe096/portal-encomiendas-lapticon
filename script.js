@@ -1,4 +1,4 @@
-const BASE_URL = "https://lapticon-backend-ed.onrender.com";
+const BASE_URL = "https://lapticon-backend.onrender.com";
 const FIREBASE_API_KEY = "AIzaSyAuh64b_I2OtC7KYuubCVx9plEe2pojp2M";
 
 let idToken = null;
